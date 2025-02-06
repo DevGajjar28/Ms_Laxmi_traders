@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Ms_Laxmi_traders/static/css/main.4e7f4a9f.css",
+    "main.js": "/Ms_Laxmi_traders/static/js/main.f8ce2670.js",
+    "static/media/machine-safety-guard.webp": "/Ms_Laxmi_traders/static/media/machine-safety-guard.2a7de5c2911bd27e9bd4.webp",
+    "static/media/acrylicbox1.jpg": "/Ms_Laxmi_traders/static/media/acrylicbox1.2ddf8c7579108d0d9a0a.jpg",
+    "static/media/img2.webp": "/Ms_Laxmi_traders/static/media/img2.397f13ec32866d7e14aa.webp",
+    "static/media/acrylicsheet.jpg": "/Ms_Laxmi_traders/static/media/acrylicsheet.694bae625eb10a5e698d.jpg",
+    "static/media/img3.webp": "/Ms_Laxmi_traders/static/media/img3.d11507202a1a828223bf.webp",
+    "static/media/img1.webp": "/Ms_Laxmi_traders/static/media/img1.e49b0ee32e373aab5d3c.webp",
+    "static/media/Acrylic Award Memento.jpg": "/Ms_Laxmi_traders/static/media/Acrylic Award Memento.6bb6c9e65317540ef92b.jpg",
+    "index.html": "/Ms_Laxmi_traders/index.html",
+    "main.4e7f4a9f.css.map": "/Ms_Laxmi_traders/static/css/main.4e7f4a9f.css.map",
+    "main.f8ce2670.js.map": "/Ms_Laxmi_traders/static/js/main.f8ce2670.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e7f4a9f.css",
+    "static/js/main.f8ce2670.js"
+  ]
+}
