@@ -1,0 +1,29 @@
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 26s linear infinite;
+}
+
+.marquee-container {
+  display: flex;
+  justify-content: start;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.marquee-content span {
+  margin-right: 50px; /* Adjust this for spacing between text */
+}
