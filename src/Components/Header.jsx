@@ -28,19 +28,174 @@ const Header = () => {
             </a>
 
             <div className="relative group">
+              {/* Main Button */}
               <button className="text-gray-800 hover:text-gray-600 focus:outline-none">
                 Products
               </button>
-              <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 w-48">
-                <a
-                  href="/products/acralic"
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                >
-                  Acralic Products
-                </a>
-                {/* Add more sub-sections here */}
+
+              {/* Main Dropdown - Shows Main Headings */}
+              <div className="absolute hidden group-hover:flex flex-col bg-white shadow-lg rounded-lg  py-2 w-56 z-10">
+                {/* Acrylic Sheet (Main Heading) */}
+                <div className="relative group/sub">
+                  <div className="px-4 py-2 text-gray-900 font-semibold cursor-pointer hover:bg-gray-100">
+                    Acrylic Sheet
+                  </div>
+                  {/* Subcategory Dropdown */}
+                  <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
+                    <a
+                      href="/products/acrylic-clear-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Acrylic Clear Sheet
+                    </a>
+                    <a
+                      href="/products/colored-acrylic-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Colored Acrylic Sheet
+                    </a>
+                    <a
+                      href="/products/astari-acrylic-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Astari Acrylic Sheet
+                    </a>
+                    <a
+                      href="/products/acrylic-transparent-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Acrylic Transparent Sheet
+                    </a>
+                  </div>
+                </div>
+
+                {/* Polycarbonate Sheet (Another Main Heading) */}
+                <div className="relative group/sub">
+                  <div className="px-4 py-2 text-gray-900 font-semibold cursor-pointer hover:bg-gray-100">
+                    Polycarbonate Sheet
+                  </div>
+                  {/* Subcategory Dropdown */}
+                  <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
+                    <a
+                      href="/products/polycarbonate-clear-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Polycarbonate Clear Sheet
+                    </a>
+                    <a
+                      href="/products/polycarbonate-colored-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Polycarbonate Colored Sheet
+                    </a>
+                  </div>
+                </div>
+
+                {/*  */}
+                <div className="relative group/sub">
+                  <div className="px-4 py-2 text-gray-900 font-semibold cursor-pointer hover:bg-gray-100">
+                    Acrylic Sheet
+                  </div>
+                  {/* Subcategory Dropdown */}
+                  <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
+                    <a
+                      href="/products/acrylic-clear-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Acrylic Clear Sheet
+                    </a>
+                    <a
+                      href="/products/colored-acrylic-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Colored Acrylic Sheet
+                    </a>
+                    <a
+                      href="/products/astari-acrylic-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Astari Acrylic Sheet
+                    </a>
+                    <a
+                      href="/products/acrylic-transparent-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Acrylic Transparent Sheet
+                    </a>
+                  </div>
+                </div>
+                {/*  */}
+
+                <div className="relative group/sub">
+                  <div className="px-4 py-2 text-gray-900 font-semibold cursor-pointer hover:bg-gray-100">
+                    Acrylic Sheet
+                  </div>
+                  {/* Subcategory Dropdown */}
+                  <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
+                    <a
+                      href="/products/acrylic-clear-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Acrylic Clear Sheet
+                    </a>
+                    <a
+                      href="/products/colored-acrylic-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Colored Acrylic Sheet
+                    </a>
+                    <a
+                      href="/products/astari-acrylic-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Astari Acrylic Sheet
+                    </a>
+                    <a
+                      href="/products/acrylic-transparent-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Acrylic Transparent Sheet
+                    </a>
+                  </div>
+                </div>
+
+                {/*  */}
+
+                <div className="relative group/sub">
+                  <div className="px-4 py-2 text-gray-900 font-semibold cursor-pointer hover:bg-gray-100">
+                    Acrylic Sheet
+                  </div>
+                  {/* Subcategory Dropdown */}
+                  <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
+                    <a
+                      href="/products/acrylic-clear-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Acrylic Clear Sheet
+                    </a>
+                    <a
+                      href="/products/colored-acrylic-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Colored Acrylic Sheet
+                    </a>
+                    <a
+                      href="/products/astari-acrylic-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Astari Acrylic Sheet
+                    </a>
+                    <a
+                      href="/products/acrylic-transparent-sheet"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Acrylic Transparent Sheet
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
+
             <a href="/about" className="text-gray-800 hover:text-gray-600">
               About
             </a>
