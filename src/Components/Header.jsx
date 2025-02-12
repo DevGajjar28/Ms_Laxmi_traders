@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +39,7 @@ const Header = () => {
                 {/* Acrylic Sheet (Main Heading) */}
                 <div className="relative group/sub">
                   <div className="px-4 py-2 text-gray-900 font-semibold cursor-pointer hover:bg-gray-100">
-                    Acrylic Sheet
+                    <Link to="./Products/Acrylicsheets">Acrylic Sheet</Link>
                   </div>
                   {/* Subcategory Dropdown */}
                   <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
