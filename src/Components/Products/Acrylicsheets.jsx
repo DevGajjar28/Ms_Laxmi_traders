@@ -1,119 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactImageMagnify from "react-image-magnify";
-import dataimg1 from "../../assets/acrylicsheet.jpg";
+import { useParams } from "react-router-dom";
+import Acrylicsheet from "../../data/Acrylicsheet";
 
 const Acrylicsheets = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
-
-  // Product data
-  const Acrylicsheet = [
-    {
-      category: "Acrylic Sheets",
-      items: [
-        {
-          id: 1,
-          name: "Acrylic Transparent Sheet",
-          price: "₹ 40/ Sq ft",
-          size: "8x4 ft",
-          color: "Transparent",
-          finish: "Glossy",
-          thickness: "5 mm",
-          density: "1.2g/cm3",
-          description:
-            "High-quality transparent acrylic sheet suitable for commercial use with a glossy finish.",
-          images: [dataimg1],
-        },
-        {
-          id: 2,
-          name: "Colored Acrylic Sheet",
-          price: "₹ 150/ Sq ft",
-          size: "8x4 ft",
-          color: "Various Colors",
-          finish: "Matte/Glossy",
-          thickness: "2-20 mm",
-          shape: "Rectangle",
-          density: "1.2 g/cm2",
-          description:
-            "Available in multiple colors with both matte and glossy finishes for versatile applications.",
-          images: [dataimg1],
-        },
-        {
-          id: 3,
-          name: "Colored Acrylic Sheet",
-          price: "₹ 150/ Sq ft",
-          size: "8x4 ft",
-          color: "Various Colors",
-          finish: "Matte/Glossy",
-          thickness: "2-20 mm",
-          shape: "Rectangle",
-          density: "1.2 g/cm2",
-          description:
-            "Available in multiple colors with both matte and glossy finishes for versatile applications.",
-          images: [dataimg1],
-        },
-        {
-          id: 4,
-          name: "Colored Acrylic Sheet",
-          price: "₹ 150/ Sq ft",
-          size: "8x4 ft",
-          color: "Various Colors",
-          finish: "Matte/Glossy",
-          thickness: "2-20 mm",
-          shape: "Rectangle",
-          density: "1.2 g/cm2",
-          description:
-            "Available in multiple colors with both matte and glossy finishes for versatile applications.",
-          images: [dataimg1],
-        },
-        {
-          id: 5,
-          name: "Colored Acrylic Sheet",
-          price: "₹ 150/ Sq ft",
-          size: "8x4 ft",
-          color: "Various Colors",
-          finish: "Matte/Glossy",
-          thickness: "2-20 mm",
-          shape: "Rectangle",
-          density: "1.2 g/cm2",
-          description:
-            "Available in multiple colors with both matte and glossy finishes for versatile applications.",
-          images: [dataimg1],
-        },
-        {
-          id: 6,
-          name: "Colored Acrylic Sheet",
-          price: "₹ 150/ Sq ft",
-          size: "8x4 ft",
-          color: "Various Colors",
-          finish: "Matte/Glossy",
-          thickness: "2-20 mm",
-          shape: "Rectangle",
-          density: "1.2 g/cm2",
-          description:
-            "Available in multiple colors with both matte and glossy finishes for versatile applications.",
-          images: [dataimg1],
-        },
-        {
-          id: 7,
-          name: "Colored Acrylic Sheet",
-          price: "₹ 150/ Sq ft",
-          size: "8x4 ft",
-          color: "Various Colors",
-          finish: "Matte/Glossy",
-          thickness: "2-20 mm",
-          shape: "Rectangle",
-          density: "1.2 g/cm2",
-          description:
-            "Available in multiple colors with both matte and glossy finishes for versatile applications.",
-          images: [dataimg1],
-        },
-        // ... other products from your data
-      ],
-    },
-  ];
-
+  const { productid } = useParams();
   const defaultImage = "/api/placeholder/500/500";
   const [selectedImage, setSelectedImage] = useState(0);
+
+  useEffect(() => {
+    if (productid) {
+      // Find the product with the matching ID
+      const product = Acrylicsheet[0].items.find(
+        (item) => item.id === productid
+      );
+      if (product) {
+        setSelectedProduct(product);
+      }
+    } else {
+      setSelectedProduct(null);
+    }
+  }, [productid]);
 
   // If no product is selected, show the product list
   if (!selectedProduct) {
@@ -261,12 +169,33 @@ const Acrylicsheets = () => {
                     <dd>{product.shape}</dd>
                   </div>
                 )}
+                {product.description && product.description !== "-" && (
+                  <div className="flex">
+                    <dt className="w-24 font-medium text-gray-600">
+                      Description:
+                    </dt>
+                    <dd>{product.description}</dd>
+                  </div>
+                )}
               </dl>
             </div>
 
             <div className="space-y-4">
-              <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition">
-                Add to Cart
+              <button
+                className="w-full bg-[#25d366] text-white py-3 px-6 rounded-lg hover:bg-[#2dc665] transition"
+                onClick={() => {
+                  const { name, price, images } = product;
+                  const productURL = window.location.href;
+
+                  const message = `Hello, I'm interested in buying this product:\n\n*Product:* ${name}\n*Price:* ₹${price}\n*Link:* ${productURL}\n*Product:* ${images}\nPlease provide more details.`;
+                  const encodedMessage = encodeURIComponent(message);
+                  window.open(
+                    `https://wa.me/+918320201473?text=${encodedMessage}`,
+                    "_blank"
+                  );
+                }}
+              >
+                Send to WhatsApp
               </button>
             </div>
           </div>

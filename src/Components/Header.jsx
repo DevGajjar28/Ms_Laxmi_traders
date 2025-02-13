@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import Acrylicsheet from "../data/Acrylicsheet";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,12 +44,13 @@ const Header = () => {
                   </div>
                   {/* Subcategory Dropdown */}
                   <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
-                    <a
-                      href="/products/acrylic-clear-sheet"
+                    <Link
+                      key={Acrylicsheet.id}
+                      to={`/products/acrylicsheets/${Acrylicsheet.id}`}
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
                     >
-                      Acrylic Clear Sheet
-                    </a>
+                      Acrylic Transparent Sheet
+                    </Link>
                     <a
                       href="/products/colored-acrylic-sheet"
                       className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
