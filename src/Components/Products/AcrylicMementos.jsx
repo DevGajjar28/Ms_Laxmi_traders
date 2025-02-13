@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Acrylicsheet from "../../data/Acrylicsheet";
+import Acrylicsheet from "../../data/AcrylicMemento";
 
-const Acrylicsheets = () => {
+const AcrylicMementos = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const { productid } = useParams();
   const defaultImage = "/api/placeholder/500/500";
@@ -26,7 +26,9 @@ const Acrylicsheets = () => {
   if (!selectedProduct) {
     return (
       <div className="container mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-8">Acrylic Sheets</h1>
+        <h1 className="text-3xl font-bold mb-8">
+          Acrylic Memento and Trophies
+        </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Acrylicsheet[0].items.map((product) => (
             <div
@@ -126,20 +128,6 @@ const Acrylicsheets = () => {
                     <dd>{product.finish}</dd>
                   </div>
                 )}
-                {product.thickness && product.thickness !== "-" && (
-                  <div className="flex">
-                    <dt className="w-24 font-medium text-gray-600">
-                      Thickness:
-                    </dt>
-                    <dd>{product.thickness}</dd>
-                  </div>
-                )}
-                {product.density && product.density !== "-" && (
-                  <div className="flex">
-                    <dt className="w-24 font-medium text-gray-600">Density:</dt>
-                    <dd>{product.density}</dd>
-                  </div>
-                )}
                 {product.shape && product.shape !== "-" && (
                   <div className="flex">
                     <dt className="w-24 font-medium text-gray-600">Shape:</dt>
@@ -182,4 +170,4 @@ const Acrylicsheets = () => {
   );
 };
 
-export default Acrylicsheets;
+export default AcrylicMementos;

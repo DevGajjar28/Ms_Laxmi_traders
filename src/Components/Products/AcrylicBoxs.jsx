@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Acrylicsheet from "../../data/Acrylicsheet";
+import Acrylicsheet from "../../data/AcrylicBox";
 
-const Acrylicsheets = () => {
+const AcrylicBoxs = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const { productid } = useParams();
   const defaultImage = "/api/placeholder/500/500";
@@ -26,7 +26,7 @@ const Acrylicsheets = () => {
   if (!selectedProduct) {
     return (
       <div className="container mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-8">Acrylic Sheets</h1>
+        <h1 className="text-3xl font-bold mb-8">Acrylic Box</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Acrylicsheet[0].items.map((product) => (
             <div
@@ -182,4 +182,4 @@ const Acrylicsheets = () => {
   );
 };
 
-export default Acrylicsheets;
+export default AcrylicBoxs;

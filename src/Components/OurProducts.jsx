@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import img3 from "../assets/Acrylic Award Memento.jpg";
 import img5 from "../assets/acrylic-rod.jpg";
 import img2 from "../assets/acrylicbox1.jpg";
@@ -11,23 +12,23 @@ const products = [
   {
     id: 1,
     name: "Acrylic Sheet",
-    description: "Advanced fitness tracking with premium health features",
+    description: "High-quality acrylic sheets for various applications",
     image: img1,
     color: "bg-black",
-    link: "/products/smart-watch",
+    link: "./Products/Acrylicsheets",
   },
   {
     id: 2,
     name: "Acrylic Box",
-    description: "Crystal clear audio with active noise cancellation",
+    description: "Custom acrylic boxes for display and storage",
     image: img2,
     color: "bg-black",
-    link: "/products/earbuds",
+    link: "./Products/AcrylicBoxs",
   },
   {
     id: 3,
     name: "Acrylic Memento and Trophies",
-    description: "Room-filling sound with voice assistant",
+    description: "Elegant acrylic awards and recognition items",
     image: img3,
     color: "bg-black",
     link: "/products/speaker",
@@ -35,7 +36,7 @@ const products = [
   {
     id: 4,
     name: "Decorative Acrylic Sheet",
-    description: "Next-gen mobile experience with advanced camera",
+    description: "Stylish acrylic sheets for interior decoration",
     image: img4,
     color: "bg-black",
     link: "/products/smartphone",
@@ -43,7 +44,7 @@ const products = [
   {
     id: 5,
     name: "Acrylic Road",
-    description: "Fast charging, high capacity portable power",
+    description: "Durable acrylic rods for construction needs",
     image: img5,
     color: "bg-black",
     link: "/products/powerbank",
@@ -51,7 +52,7 @@ const products = [
   {
     id: 6,
     name: "Machine Covers",
-    description: "Ultimate gaming experience with 4K graphics",
+    description: "Protective acrylic covers for industrial machinery",
     image: img6,
     color: "bg-black",
     link: "/products/console",
@@ -59,8 +60,14 @@ const products = [
 ];
 
 const ProductCard = ({ product }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(product.link);
+  };
+
   return (
-    <div className="flex flex-col bg-white rounded-2xl overflow-hidden border-2 border-gray-300">
+    <div className="flex flex-col bg-white rounded-2xl overflow-hidden border-2 border-gray-300 h-full">
       <div className="relative h-48 overflow-hidden">
         <img
           src={product.image}
@@ -74,6 +81,7 @@ const ProductCard = ({ product }) => {
         <p className="text-gray-600 mb-4 flex-grow">{product.description}</p>
 
         <button
+          onClick={handleClick}
           className={`${product.color} text-white px-6 py-3 rounded-xl flex items-center justify-between hover:opacity-90 transition-opacity`}
         >
           <span>View Product</span>
@@ -91,8 +99,8 @@ const OurProducts = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Products</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover our collection of premium products designed to enhance your
-            lifestyle
+            Discover our collection of premium acrylic products designed for
+            your needs
           </p>
         </div>
 

@@ -6,6 +6,8 @@ import About from "./Components/About";
 import ContactForm from "./Components/ContactForm";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
+import AcrylicBoxs from "./Components/Products/AcrylicBoxs";
+import AcrylicMementos from "./Components/Products/AcrylicMementos";
 import Acrylicsheets from "./Components/Products/Acrylicsheets";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
@@ -23,6 +25,8 @@ const App = () => {
           <Route path="/products/acrylicsheets" element={<Acrylicsheets />} />
           <Route path="/products/acrylicsheets" element={<Acrylicsheets />} />
           <Route path="/products/acrylicsheets/:productId" element={<Acrylicsheets />} />
+          <Route path="/products/acrylicboxs" element={<AcrylicBoxs />} />
+          <Route path="/products/acrylicmementos" element={<AcrylicMementos />} />
 
         </Routes>
         <Footer />
