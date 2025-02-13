@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ReactImageMagnify from "react-image-magnify";
 import { useParams } from "react-router-dom";
 import Acrylicsheet from "../../data/Acrylicsheet";
 
@@ -70,27 +69,6 @@ const Acrylicsheets = () => {
         <div className="md:w-1/2">
           <div className="relative">
             {/* Zoomable Image */}
-            <div className="relative w-full aspect-square overflow-hidden rounded-lg border cursor-zoom-in">
-              <ReactImageMagnify
-                {...{
-                  smallImage: {
-                    alt: product.name,
-                    isFluidWidth: true,
-                    src: images[selectedImage],
-                  },
-                  largeImage: {
-                    src: images[selectedImage],
-                    width: 1200,
-                    height: 1200,
-                  },
-                  enlargedImageContainerDimensions: {
-                    width: "200%",
-                    height: "150%",
-                  },
-                  isHintEnabled: true,
-                }}
-              />
-            </div>
 
             {/* Thumbnail Gallery */}
             {images.length > 1 && (
