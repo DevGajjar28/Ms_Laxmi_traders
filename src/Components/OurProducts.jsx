@@ -31,7 +31,7 @@ const products = [
     description: "Elegant acrylic awards and recognition items",
     image: img3,
     color: "bg-black",
-    link: "/products/speaker",
+    link: "./Products/AcrylicMementos",
   },
   {
     id: 4,
@@ -39,15 +39,15 @@ const products = [
     description: "Stylish acrylic sheets for interior decoration",
     image: img4,
     color: "bg-black",
-    link: "/products/smartphone",
+    link: "./Products/MachineCovers",
   },
   {
     id: 5,
-    name: "Acrylic Road",
+    name: "Acrylic Rod",
     description: "Durable acrylic rods for construction needs",
     image: img5,
     color: "bg-black",
-    link: "/products/powerbank",
+    link: "./Products/AcrylicRod",
   },
   {
     id: 6,
@@ -55,7 +55,7 @@ const products = [
     description: "Protective acrylic covers for industrial machinery",
     image: img6,
     color: "bg-black",
-    link: "/products/console",
+    link: "/products/MachineCover",
   },
 ];
 

@@ -8,9 +8,12 @@ import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import AcrylicBoxs from "./Components/Products/AcrylicBoxs";
 import AcrylicMementos from "./Components/Products/AcrylicMementos";
+import AcrylicRods from "./Components/Products/AcrylicRods";
 import Acrylicsheets from "./Components/Products/Acrylicsheets";
+import MachineCovers from "./Components/Products/MachineCovers";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
+
 
 const App = () => {
   return (
@@ -27,6 +30,8 @@ const App = () => {
           <Route path="/products/acrylicsheets/:productId" element={<Acrylicsheets />} />
           <Route path="/products/acrylicboxs" element={<AcrylicBoxs />} />
           <Route path="/products/acrylicmementos" element={<AcrylicMementos />} />
+          <Route path="/products/acrylicrod" element={<AcrylicRods />} />
+          <Route path="/products/machinecover" element={<MachineCovers />} />
 
         </Routes>
         <Footer />

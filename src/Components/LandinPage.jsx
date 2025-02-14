@@ -1,5 +1,7 @@
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
@@ -82,7 +84,7 @@ const LandingPage = () => {
                     </h1>
                     <p className="mt-2 text-xl">{slide.description}</p>
                     <button className="mt-4 bg-black hover:bg-gray-800 text-white px-6 py-3 rounded transition">
-                      View More Products
+                      <Link to="./Products">View More Products</Link>
                     </button>
                   </div>
                 </div>

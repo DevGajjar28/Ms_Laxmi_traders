@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Acrylicsheet from "../../data/Acrylicsheet";
+import {
+  default as AcrylicRod,
+  default as MachineCover,
+} from "../../data/MachineCover";
 
-const Acrylicsheets = () => {
+const MachineCovers = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const { productid } = useParams();
   const defaultImage = "/api/placeholder/500/500";
@@ -11,9 +14,7 @@ const Acrylicsheets = () => {
   useEffect(() => {
     if (productid) {
       // Find the product with the matching ID
-      const product = Acrylicsheet[0].items.find(
-        (item) => item.id === productid
-      );
+      const product = AcrylicRod[0].items.find((item) => item.id === productid);
       if (product) {
         setSelectedProduct(product);
       }
@@ -26,9 +27,9 @@ const Acrylicsheets = () => {
   if (!selectedProduct) {
     return (
       <div className="container mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-8">Acrylic Sheets</h1>
+        <h1 className="text-3xl font-bold mb-8">Acrylic Machine Covers</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Acrylicsheet[0].items.map((product) => (
+          {MachineCover[0].items.map((product) => (
             <div
               key={product.id}
               className="border rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer p-4"
@@ -53,7 +54,7 @@ const Acrylicsheets = () => {
 
   // Product detail view
   const product = selectedProduct;
-  const images = product.images?.length > 0 ? product.images : [defaultImage];
+  const images = product.images?.finish > 0 ? product.images : [defaultImage];
 
   return (
     <div className="container mx-auto p-6">
@@ -70,27 +71,6 @@ const Acrylicsheets = () => {
           <div className="relative">
             {/* Zoomable Image */}
             {/* Thumbnail Gallery */}
-            {images.length > 1 && (
-              <div className="flex gap-2 mt-4">
-                {images.map((image, idx) => (
-                  <button
-                    key={idx}
-                    className={`w-16 h-16 border rounded-md overflow-hidden ${
-                      selectedImage === idx
-                        ? "border-blue-500 border-2"
-                        : "border-gray-200"
-                    }`}
-                    onClick={() => setSelectedImage(idx)}
-                  >
-                    <img
-                      src={image}
-                      alt={`${product.name} thumbnail ${idx + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </button>
-                ))}
-              </div>
-            )}
           </div>
         </div>
 
@@ -108,10 +88,12 @@ const Acrylicsheets = () => {
             <div className="bg-gray-50 rounded-lg p-6 mb-6">
               <h4 className="font-semibold mb-4">Specifications</h4>
               <dl className="space-y-2">
-                {product.size && product.size !== "-" && (
+                {product.material && product.material !== "-" && (
                   <div className="flex">
-                    <dt className="w-24 font-medium text-gray-600">Size:</dt>
-                    <dd>{product.size}</dd>
+                    <dt className="w-24 font-medium text-gray-600">
+                      Material:
+                    </dt>
+                    <dd>{product.material}</dd>
                   </div>
                 )}
                 {product.color && product.color !== "-" && (
@@ -126,26 +108,7 @@ const Acrylicsheets = () => {
                     <dd>{product.finish}</dd>
                   </div>
                 )}
-                {product.thickness && product.thickness !== "-" && (
-                  <div className="flex">
-                    <dt className="w-24 font-medium text-gray-600">
-                      Thickness:
-                    </dt>
-                    <dd>{product.thickness}</dd>
-                  </div>
-                )}
-                {product.density && product.density !== "-" && (
-                  <div className="flex">
-                    <dt className="w-24 font-medium text-gray-600">Density:</dt>
-                    <dd>{product.density}</dd>
-                  </div>
-                )}
-                {product.shape && product.shape !== "-" && (
-                  <div className="flex">
-                    <dt className="w-24 font-medium text-gray-600">Shape:</dt>
-                    <dd>{product.shape}</dd>
-                  </div>
-                )}
+
                 {product.description && product.description !== "-" && (
                   <div className="flex">
                     <dt className="w-24 font-medium text-gray-600">
@@ -167,7 +130,7 @@ const Acrylicsheets = () => {
                   const message = `Hello, I'm interested in buying this product:\n\n*Product:* ${name}\n*Price:* ₹${price}\n*Link:* ${productURL}\n*Product:* ${images}\nPlease provide more details.`;
                   const encodedMessage = encodeURIComponent(message);
                   window.open(
-                    `https://wa.me/+919104014663?text=${encodedMessage}`,
+                    `https://wa.me/+918320201473?text=${encodedMessage}`,
                     "_blank"
                   );
                 }}
@@ -182,4 +145,4 @@ const Acrylicsheets = () => {
   );
 };
 
-export default Acrylicsheets;
+export default MachineCovers;
