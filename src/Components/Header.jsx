@@ -51,7 +51,7 @@ const Header = () => {
 
             <div className="relative group">
               <button className="text-gray-800 hover:text-gray-600 focus:outline-none">
-                Products
+                <Link to="./ProductList">Products</Link>
               </button>
 
               <div className="absolute hidden group-hover:flex flex-col bg-white shadow-lg rounded-lg py-2 w-56 z-10">

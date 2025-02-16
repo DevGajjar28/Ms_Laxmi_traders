@@ -44,7 +44,7 @@ const FeatureHighlights = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="p-6 bg-white shadow-md border-2 rounded-full  flex flex-col items-center"
+              className="p-6 bg-white shadow-md border-2 rounded-full flex flex-col items-center"
             >
               {/* Circle container for icon */}
               <div className="mb-4 p-6  flex items-center justify-center">

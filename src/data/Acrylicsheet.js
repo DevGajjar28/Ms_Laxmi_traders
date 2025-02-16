@@ -1,4 +1,13 @@
-import dataimg1 from "../assets/acrylicsheet.jpg";
+import dataimg8 from "../assets/item1/aplas.jpg";
+import dataimg3 from "../assets/item1/astric3.jpg";
+import dataimg4 from "../assets/item1/black4.webp";
+import dataimg7 from "../assets/item1/Blue_1.webp";
+import dataimg6 from "../assets/item1/cast6.webp";
+import dataimg2 from "../assets/item1/color.png";
+import dataimg9 from "../assets/item1/plas.avif";
+import dataimg5 from "../assets/item1/poly5.webp";
+import dataimg1 from "../assets/p-trans1.jpg";
+
 
 const Acrylicsheet = [
     {
@@ -27,6 +36,7 @@ const Acrylicsheet = [
                 shape: "Rectangle",
                 density: "1.2 g/cm2",
                 description: "Price varies based on selected size.",
+                images: [dataimg2]
             },
             {
                 id: 3,
@@ -39,6 +49,8 @@ const Acrylicsheet = [
                 shape: "-",
                 density: "-",
                 description: "Price varies based on selected size.",
+                images: [dataimg3]
+
             },
             {
                 id: 4,
@@ -76,6 +88,8 @@ const Acrylicsheet = [
                 shape: "-",
                 density: "-",
                 description: "Price varies based on selected size",
+                images: [dataimg4]
+
             },
             {
                 id: 7,
@@ -88,6 +102,8 @@ const Acrylicsheet = [
                 shape: "-",
                 density: "-",
                 description: "Price varies based on selected size",
+                images: [dataimg5]
+
             },
             {
                 id: 8,
@@ -100,6 +116,8 @@ const Acrylicsheet = [
                 shape: "-",
                 density: "-",
                 description: "Price varies based on selected size",
+                images: [dataimg6]
+
             },
             {
                 id: 9,
@@ -137,6 +155,8 @@ const Acrylicsheet = [
                 shape: "Rectangular",
                 density: "1.2 g/cm3",
                 description: "Price varies based on selected size",
+                images: [dataimg7]
+
             },
             {
                 id: 13,
@@ -149,6 +169,8 @@ const Acrylicsheet = [
                 shape: "Rectangle",
                 density: "1.2 g/cm3",
                 description: "Price varies based on selected size",
+                images: [dataimg8]
+
             },
             {
                 id: 14,
@@ -161,6 +183,8 @@ const Acrylicsheet = [
                 shape: "Rectangular",
                 density: "1.2 g/cm3",
                 description: "Price varies based on selected size",
+                images: [dataimg9]
+
             },
             {
                 id: 15,

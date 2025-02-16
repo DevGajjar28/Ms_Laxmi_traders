@@ -6,6 +6,7 @@ import About from "./Components/About";
 import ContactForm from "./Components/ContactForm";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
+import ProductList from "./Components/ProductList";
 import AcrylicBoxs from "./Components/Products/AcrylicBoxs";
 import AcrylicMementos from "./Components/Products/AcrylicMementos";
 import AcrylicRods from "./Components/Products/AcrylicRods";
@@ -32,6 +33,8 @@ const App = () => {
           <Route path="/products/acrylicmementos" element={<AcrylicMementos />} />
           <Route path="/products/acrylicrod" element={<AcrylicRods />} />
           <Route path="/products/machinecover" element={<MachineCovers />} />
+          <Route path="productList" element={<ProductList />} />
+
 
         </Routes>
         <Footer />

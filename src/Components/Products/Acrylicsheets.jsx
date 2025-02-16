@@ -37,7 +37,7 @@ const Acrylicsheets = () => {
               <img
                 src={product.images?.[0] || defaultImage}
                 alt={product.name}
-                className="w-full h-48 object-cover rounded-lg mb-4"
+                className="w-full h-64  rounded-lg mb-4"
               />
               <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
               <p className="text-blue-600 font-bold mb-2">{product.price}</p>
@@ -66,9 +66,18 @@ const Acrylicsheets = () => {
 
       <div className="flex flex-col md:flex-row gap-8 mb-12 bg-white rounded-lg shadow-lg p-6">
         {/* Image Section */}
+        {/* Image Section */}
         <div className="md:w-1/2">
           <div className="relative">
-            {/* Zoomable Image */}
+            {/* Main Selected Image */}
+            <div className="w-full h-full overflow-hidden rounded-lg border border-gray-200">
+              <img
+                src={images[selectedImage] || defaultImage}
+                alt={`${product.name} image`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
             {/* Thumbnail Gallery */}
             {images.length > 1 && (
               <div className="flex gap-2 mt-4">
@@ -85,7 +94,7 @@ const Acrylicsheets = () => {
                     <img
                       src={image}
                       alt={`${product.name} thumbnail ${idx + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full "
                     />
                   </button>
                 ))}

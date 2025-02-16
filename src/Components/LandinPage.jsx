@@ -1,14 +1,13 @@
 import gsap from "gsap";
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import img1 from "../assets/img1.webp";
 import img2 from "../assets/img2.webp";
-import img3 from "../assets/img3.webp";
+import img3 from "../assets/machinemain.jpg";
+import img1 from "../assets/main1.avif";
 
 const slides = [
   {
@@ -46,12 +45,10 @@ const LandingPage = () => {
 
   return (
     <>
-      {/* Preload LCP Image */}
       <link rel="preload" as="image" href={slides[0].image} type="image/webp" />
 
       <div className="w-full">
-        {/* Hero Section with Auto-Sliding Carousel */}
-        <section className="relative w-full h-[70vh]">
+        <section className="relative w-full h-[calc(100vh-80px)]">
           <Swiper
             modules={[Autoplay, EffectFade]}
             effect="fade"
@@ -62,30 +59,35 @@ const LandingPage = () => {
             {slides.map((slide, index) => (
               <SwiperSlide key={index}>
                 <div className="relative w-full h-full">
-                  {/* Background Image (Using img instead of background-image) */}
-                  <img
-                    src={slide.image}
-                    alt={slide.title}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    loading={index === 0 ? "eager" : "lazy"} // Eager loading for LCP, lazy for others
-                    fetchPriority={index === 0 ? "high" : "low"} // Boost LCP priority
-                  />
+                  <div className="absolute inset-0">
+                    <img
+                      src={slide.image}
+                      alt={slide.title}
+                      className="w-full h-full object-cover object-center"
+                      style={{ imageRendering: "crisp-edges" }}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      fetchPriority={index === 0 ? "high" : "low"}
+                    />
+                  </div>
 
-                  {/* Overlay (Dark for better readability) */}
-                  <div className="absolute inset-0 bg-black/40"></div>
+                  <div className="absolute inset-0 bg-black/40" />
 
-                  {/* Text Content */}
                   <div
                     ref={textRef}
-                    className="absolute top-10 left-10 md:top-20 md:left-20 text-white z-10 max-w-lg"
+                    className="absolute inset-0 flex flex-col justify-center px-8 md:px-20 text-white z-10 max-w-2xl"
                   >
-                    <h1 className="text-3xl md:text-5xl font-bold">
+                    <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                       {slide.title}
                     </h1>
-                    <p className="mt-2 text-xl">{slide.description}</p>
-                    <button className="mt-4 bg-black hover:bg-gray-800 text-white px-6 py-3 rounded transition">
-                      <Link to="./Products">View More Products</Link>
-                    </button>
+                    <p className="mt-4 text-lg md:text-xl">
+                      {slide.description}
+                    </p>
+                    <Link
+                      to="./Products"
+                      className="mt-8 inline-block bg-black hover:bg-gray-800 text-white px-8 py-4 rounded transition w-fit"
+                    >
+                      View More Products
+                    </Link>
                   </div>
                 </div>
               </SwiperSlide>
