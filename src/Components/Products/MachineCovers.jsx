@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MachineCover from "../../data/MachineCover";
+import Whatsapp from "./Whatsapp";
 
 const MachineCovers = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -12,7 +13,7 @@ const MachineCovers = () => {
     if (productid) {
       // Find the product with the matching ID
       const product = MachineCover[0].items.find(
-        (item) => item.id === productid
+        (item) => item.id === parseInt(productid)
       );
       if (product) {
         setSelectedProduct(product);
@@ -30,6 +31,7 @@ const MachineCovers = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {MachineCover[0].items.map((product) => (
             <div
+              to={`/products/machinecover/${product.id}`}
               key={product.id}
               className="border rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer p-4"
               onClick={() => setSelectedProduct(product)}
@@ -148,22 +150,7 @@ const MachineCovers = () => {
             </div>
 
             <div className="space-y-4">
-              <button
-                className="w-full bg-[#25d366] text-white py-3 px-6 rounded-lg hover:bg-[#2dc665] transition"
-                onClick={() => {
-                  const { name, price, images } = product;
-                  const productURL = window.location.href;
-
-                  const message = `Hello, I'm interested in buying this product:\n\n*Product:* ${name}\n*Price:* ₹${price}\n*Link:* ${productURL}\n*Product:* ${images}\nPlease provide more details.`;
-                  const encodedMessage = encodeURIComponent(message);
-                  window.open(
-                    `https://wa.me/+918320201473?text=${encodedMessage}`,
-                    "_blank"
-                  );
-                }}
-              >
-                Send to WhatsApp
-              </button>
+              <Whatsapp product={product} />
             </div>
           </div>
         </div>

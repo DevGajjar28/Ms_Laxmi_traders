@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Acrylicsheet from "../../data/AcrylicMemento";
+import AcrylicMemento from "../../data/AcrylicMemento";
+import Whatsapp from "./Whatsapp";
 
 const AcrylicMementos = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -11,9 +12,10 @@ const AcrylicMementos = () => {
   useEffect(() => {
     if (productid) {
       // Find the product with the matching ID
-      const product = Acrylicsheet[0].items.find(
-        (item) => item.id === productid
+      const product = AcrylicMemento[0].items.find(
+        (item) => item.id === parseInt(productid)
       );
+
       if (product) {
         setSelectedProduct(product);
       }
@@ -30,9 +32,10 @@ const AcrylicMementos = () => {
           Acrylic Memento and Trophies
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Acrylicsheet[0].items.map((product) => (
+          {AcrylicMemento[0].items.map((product) => (
             <div
               key={product.id}
+              to={`/products/acrylicmementos/${product.id}`}
               className="border rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer p-4"
               onClick={() => setSelectedProduct(product)}
             >
@@ -153,22 +156,7 @@ const AcrylicMementos = () => {
             </div>
 
             <div className="space-y-4">
-              <button
-                className="w-full bg-[#25d366] text-white py-3 px-6 rounded-lg hover:bg-[#2dc665] transition"
-                onClick={() => {
-                  const { name, price, images } = product;
-                  const productURL = window.location.href;
-
-                  const message = `Hello, I'm interested in buying this product:\n\n*Product:* ${name}\n*Price:* ₹${price}\n*Link:* ${productURL}\n*Product:* ${images}\nPlease provide more details.`;
-                  const encodedMessage = encodeURIComponent(message);
-                  window.open(
-                    `https://wa.me/+918320201473?text=${encodedMessage}`,
-                    "_blank"
-                  );
-                }}
-              >
-                Send to WhatsApp
-              </button>
+              <Whatsapp product={product} />
             </div>
           </div>
         </div>

@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo1 from "../assets/temp.webp";
+import AcrylicBox from "../data/AcrylicBox";
+import AcrylicMementos from "../data/AcrylicMemento";
+import AcrylicRod from "../data/AcrylicRod";
+import Acrylicsheet from "../data/Acrylicsheet";
+import MachineCover from "../data/MachineCover";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -60,69 +65,15 @@ const Header = () => {
 
                   <div className="absolute hidden group-hover/sub:flex flex-wrap left-full top-0 bg-white shadow-lg rounded-lg w-[600px] p-4 z-20">
                     <div className="grid grid-cols-2 gap-2 w-full">
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Acrylic Transparent Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Colored Acrylic Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Astari Acrylic Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Transparent Display Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        2mm Black Acrylic Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Polystyrene Plastic Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Acrylic Cast Sheets
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Jewellery Display Box
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Acrylic Display Box
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Blue Acrylic Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Acrylic Plastic Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        8x4 Feet Acrylic Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Rectangular Acrylic Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Acrylic Mirror Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Cast Acrylic Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Window Acrylic Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Acrylic Cut Pieces And Sheets
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Acrylic Mirror Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Acrylic Plastic Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Polycarbonate Clear Sheet
-                      </Link>
-                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                        Transparent Machine Guard
-                      </Link>
+                      {Acrylicsheet[0].items.map((product) => (
+                        <Link
+                          key={product.id}
+                          to={`/products/acrylicsheets/${product.id}`}
+                          className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm"
+                        >
+                          {product.name}
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -132,21 +83,15 @@ const Header = () => {
                     <Link to="./Products/AcrylicBoxs">Acrylic Box</Link>
                   </div>
                   <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Acrylic Waterproof Box
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      QR Code Stand
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Acrylic Weighing Box
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Electric Acrylic Box
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Colored Acrylic Box
-                    </a>
+                    {AcrylicBox[0].items.map((product) => (
+                      <Link
+                        key={product.id}
+                        to={`/products/acrylicboxs/${product.id}`}
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm"
+                      >
+                        {product.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
 
@@ -157,21 +102,15 @@ const Header = () => {
                     </Link>
                   </div>
                   <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Acrylic Trophy Memento
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Acrylic Award Memento
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Wooden Acrylic Trophy
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Acrylic Award Trophies
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Acrylic Award Trophy
-                    </a>
+                    {AcrylicMementos[0].items.map((product) => (
+                      <Link
+                        key={product.id}
+                        to={`/products/acrylicmementos/${product.id}`}
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm"
+                      >
+                        {product.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
 
@@ -180,12 +119,15 @@ const Header = () => {
                     <Link to="./Products/AcrylicRod">Acrylic Rod</Link>
                   </div>
                   <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Acrylic Pipe And Rod
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Acrylic Round Rod
-                    </a>
+                    {AcrylicRod[0].items.map((product) => (
+                      <Link
+                        key={product.id}
+                        to={`/products/acrylicrod/${product.id}`}
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm"
+                      >
+                        {product.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
 
@@ -194,18 +136,15 @@ const Header = () => {
                     <Link to="./Products/MachineCover">Machine Cover</Link>
                   </div>
                   <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Machine Safety Guard
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Acrylic Machine Guard
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Gauge Meter Glass
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
-                      Meter Window Glass
-                    </a>
+                    {MachineCover[0].items.map((product) => (
+                      <Link
+                        key={product.id}
+                        to={`/products/machinecover/${product.id}`}
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm"
+                      >
+                        {product.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -315,72 +254,15 @@ const Header = () => {
                       openCategories.acrylicSheet ? "block" : "hidden"
                     }`}
                   >
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Transparent Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Colored Acrylic Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Astari Acrylic Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Transparent Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Transparent Display Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      2mm Black Acrylic Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Polystyrene Plastic Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Cast Sheets
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Jewellery Display Box
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Display Box
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Blue Acrylic Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Plastic Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      8x4 Feet Acrylic Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Rectangular Acrylic Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Mirror Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Cast Acrylic Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Window Acrylic Sheet
-                    </Link>{" "}
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Cut Pieces And Sheets
-                    </Link>{" "}
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Mirror Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Plastic Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Polycarbonate Clear Sheet
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Transparent Machine Guard
-                    </Link>
+                    {Acrylicsheet[0].items.map((product) => (
+                      <Link
+                        key={product.id}
+                        to={`/products/acrylicsheets/${product.id}`}
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm"
+                      >
+                        {product.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
 
@@ -392,7 +274,7 @@ const Header = () => {
                   >
                     <Link
                       to="./Products/AcrylicBoxs"
-                      className="text-gray-800 font-semibold"
+                      className="text-gray-800 font-normal"
                     >
                       Acrylic Box
                     </Link>
@@ -417,18 +299,15 @@ const Header = () => {
                       openCategories.acrylicBox ? "block" : "hidden"
                     }`}
                   >
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Waterproof Box
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      QR Code Stand
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Weighing Box
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Electric Acrylic Box
-                    </Link>
+                    {AcrylicBox[0].items.map((product) => (
+                      <Link
+                        key={product.id}
+                        to={`/products/acrylicboxs/${product.id}`}
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm"
+                      >
+                        {product.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
 
@@ -440,7 +319,7 @@ const Header = () => {
                   >
                     <Link
                       to="./Products/AcrylicMementos"
-                      className="text-gray-800 font-semibold"
+                      className="text-gray-800 font-normal"
                     >
                       Acrylic Mementos & Trophis
                     </Link>
@@ -465,18 +344,15 @@ const Header = () => {
                       openCategories.acrylicMemento ? "block" : "hidden"
                     }`}
                   >
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Trophy Memento
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Award Memento
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Wooden Acrylic Trophy
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Award Trophies
-                    </Link>
+                    {AcrylicMementos[0].items.map((product) => (
+                      <Link
+                        key={product.id}
+                        to={`/products/acrylicmementos/${product.id}`}
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm"
+                      >
+                        {product.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
 
@@ -486,7 +362,7 @@ const Header = () => {
                     onClick={() => toggleCategory("acrylicRod")}
                     className="w-full py-3 px-4 flex justify-between items-center hover:bg-gray-50"
                   >
-                    <span className="text-gray-800 font-semibold">
+                    <span className="text-gray-800 font-normal">
                       Acrylic Rod
                     </span>
                     <svg
@@ -510,12 +386,15 @@ const Header = () => {
                       openCategories.acrylicRod ? "block" : "hidden"
                     }`}
                   >
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Pipe And Rod
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Round Rod
-                    </Link>
+                    {AcrylicRod[0].items.map((product) => (
+                      <Link
+                        key={product.id}
+                        to={`/products/acrylicrod/${product.id}`}
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm"
+                      >
+                        {product.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
 
@@ -525,7 +404,7 @@ const Header = () => {
                     onClick={() => toggleCategory("machinecover")}
                     className="w-full py-3 px-4 flex justify-between items-center hover:bg-gray-50"
                   >
-                    <span className="text-gray-800 font-semibold">
+                    <span className="text-gray-800 font-normal">
                       Machine Cover
                     </span>
                     <svg
@@ -549,18 +428,15 @@ const Header = () => {
                       openCategories.machinecover ? "block" : "hidden"
                     }`}
                   >
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Machine Safety Guard
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Acrylic Machine Guard
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Gauge Meter Glass
-                    </Link>
-                    <Link className="block text-gray-600 text-sm py-1">
-                      Meter Window Glass
-                    </Link>
+                    {MachineCover[0].items.map((product) => (
+                      <Link
+                        key={product.id}
+                        to={`/products/machinecover/${product.id}`}
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm"
+                      >
+                        {product.name}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </div>

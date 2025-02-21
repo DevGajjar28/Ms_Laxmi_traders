@@ -28,15 +28,20 @@ const App = () => {
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/about" element={<About />} />
           <Route path="/product" element={<Product />} />
+          {/* Subcategory Routes */}
           <Route path="/products/acrylicsheets" element={<Acrylicsheets />} />
-          <Route path="/products/acrylicsheets" element={<Acrylicsheets />} />
-          <Route path="/products/acrylicsheets/:productId" element={<Acrylicsheets />} />
           <Route path="/products/acrylicboxs" element={<AcrylicBoxs />} />
           <Route path="/products/acrylicmementos" element={<AcrylicMementos />} />
           <Route path="/products/acrylicrod" element={<AcrylicRods />} />
           <Route path="/products/machinecover" element={<MachineCovers />} />
           <Route path="productList" element={<ProductList />} />
 
+          {/* Product Detail Routes */}
+          <Route path="/products/acrylicboxs/:productid" element={<AcrylicBoxs />} />
+          <Route path="/products/acrylicsheets/:productid" element={<Acrylicsheets />} />
+          <Route path="/products/acrylicmementos/:productid" element={<AcrylicMementos />} />
+          <Route path="/products/acrylicrod/:productid" element={<AcrylicRods />} />
+          <Route path="/products/machinecover/:productid" element={<MachineCovers />} />
 
         </Routes>
         <Footer />

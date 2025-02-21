@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import Acrylicsheet from "../../data/AcrylicBox";
+import { Link, useParams } from "react-router-dom";
+import AcrylicBox from "../../data/AcrylicBox";
+import Whatsapp from "./Whatsapp";
 
 const AcrylicBoxs = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -11,8 +12,8 @@ const AcrylicBoxs = () => {
   useEffect(() => {
     if (productid) {
       // Find the product with the matching ID
-      const product = Acrylicsheet[0].items.find(
-        (item) => item.id === productid
+      const product = AcrylicBox[0].items.find(
+        (item) => item.id === parseInt(productid)
       );
       if (product) {
         setSelectedProduct(product);
@@ -28,23 +29,24 @@ const AcrylicBoxs = () => {
       <div className="container mx-auto p-6">
         <h1 className="text-3xl font-bold mb-8">Acrylic Box</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {Acrylicsheet[0].items.map((product) => (
-            <div
-              key={product.id}
-              className="border rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer p-4"
-              onClick={() => setSelectedProduct(product)}
-            >
-              <img
-                src={product.images?.[0] || defaultImage}
-                alt={product.name}
-                className="w-full h-64 object-cover rounded-lg mb-4"
-              />
-              <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-              <p className="text-blue-600 font-bold mb-2">{product.price}</p>
-              <p className="text-gray-600 line-clamp-2">
-                {product.description}
-              </p>
-            </div>
+          {AcrylicBox[0].items.map((product) => (
+            <Link key={product.id} to={`/products/acrylicboxs/${product.id}`}>
+              <div
+                className="border rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer p-4"
+                onClick={() => setSelectedProduct(product)}
+              >
+                <img
+                  src={product.images?.[0] || defaultImage}
+                  alt={product.name}
+                  className="w-full h-64 object-cover rounded-lg mb-4"
+                />
+                <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
+                <p className="text-blue-600 font-bold mb-2">{product.price}</p>
+                <p className="text-gray-600 line-clamp-2">
+                  {product.description}
+                </p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -165,22 +167,7 @@ const AcrylicBoxs = () => {
             </div>
 
             <div className="space-y-4">
-              <button
-                className="w-full bg-[#25d366] text-white py-3 px-6 rounded-lg hover:bg-[#2dc665] transition"
-                onClick={() => {
-                  const { name, price, images } = product;
-                  const productURL = window.location.href;
-
-                  const message = `Hello, I'm interested in buying this product:\n\n*Product:* ${name}\n*Price:* ₹${price}\n*Link:* ${productURL}\n*Product:* ${images}\nPlease provide more details.`;
-                  const encodedMessage = encodeURIComponent(message);
-                  window.open(
-                    `https://wa.me/+918320201473?text=${encodedMessage}`,
-                    "_blank"
-                  );
-                }}
-              >
-                Send to WhatsApp
-              </button>
+              <Whatsapp product={product} />
             </div>
           </div>
         </div>
