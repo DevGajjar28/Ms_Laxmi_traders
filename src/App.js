@@ -3,6 +3,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import About from "./Components/About";
+import Banner from "./Components/Banner";
 import ContactForm from "./Components/ContactForm";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <HelmetProvider>
       <Router>
+        <Banner />
         <Header />
         <Routes>
           <Route path="/" element={< Home />} />

@@ -37,7 +37,7 @@ const MachineCovers = () => {
               <img
                 src={product.images?.[0] || defaultImage}
                 alt={product.name}
-                className="w-full h-48 object-cover rounded-lg mb-4"
+                className="w-full h-64 object-cover rounded-lg mb-4"
               />
               <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
               <p className="text-blue-600 font-bold mb-2">{product.price}</p>
@@ -53,7 +53,7 @@ const MachineCovers = () => {
 
   // Product detail view
   const product = selectedProduct;
-  const images = product.images?.finish > 0 ? product.images : [defaultImage];
+  const images = product.images?.length > 0 ? product.images : [defaultImage];
 
   return (
     <div className="container mx-auto p-6">

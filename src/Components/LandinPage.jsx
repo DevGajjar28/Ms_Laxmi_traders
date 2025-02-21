@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import img2 from "../assets/img2.webp";
-import img3 from "../assets/machinemain.jpg";
-import img1 from "../assets/main1.avif";
+import img1 from "../assets/main1.png";
+import img2 from "../assets/main2.jpg";
+import img3 from "../assets/main3.jpg";
 
 const slides = [
   {
@@ -52,7 +52,7 @@ const LandingPage = () => {
           <Swiper
             modules={[Autoplay, EffectFade]}
             effect="fade"
-            autoplay={{ delay: 3000 }}
+            autoplay={{ delay: 4000 }}
             loop={true}
             className="w-full h-full"
           >

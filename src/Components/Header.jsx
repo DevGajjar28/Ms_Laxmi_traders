@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo1 from "../assets/temp.webp";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,11 +32,16 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-md">
-      <div className="container mx-auto px-6 py-3">
+      <div className="container mx-auto px-6 py-1">
         <div className="flex justify-between items-center">
-          <a href="/" className="text-2xl font-bold text-gray-800">
-            Logo
+          <a href="/" className="flex items-center ">
+            <img src={logo1} alt="Laxmi Traders Logo" className="h-14 w-auto" />
+            <div className="flex flex-col justify-start leading-tight">
+              <span className="text-lg font-bold text-gray-800">MS Laxmi</span>
+              <span className="text-lg font-bold text-gray-800">Traders</span>
+            </div>
           </a>
+
           <nav className="hidden text-xl mr-60 font-normal p-6 md:flex space-x-28">
             <a href="/" className="text-gray-800 hover:text-gray-600">
               Home
@@ -48,7 +54,7 @@ const Header = () => {
 
               <div className="absolute hidden group-hover:flex flex-col bg-white shadow-lg rounded-lg py-2 w-56 z-10">
                 <div className="relative group/sub">
-                  <div className="px-4 py-2 text-gray-900 font-semibold cursor-pointer hover:bg-gray-100">
+                  <div className="px-4 py-2 text-gray-900 text-lg font-normal cursor-pointer hover:bg-gray-100">
                     <Link to="./Products/Acrylicsheets">Acrylic Sheet</Link>
                   </div>
 
@@ -122,82 +128,82 @@ const Header = () => {
                 </div>
 
                 <div className="relative group/sub">
-                  <div className="px-4 py-2 text-gray-900 font-semibold cursor-pointer hover:bg-gray-100">
+                  <div className="px-4 py-2 text-gray-900 text-lg font-normal cursor-pointer hover:bg-gray-100">
                     <Link to="./Products/AcrylicBoxs">Acrylic Box</Link>
                   </div>
                   <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Acrylic Waterproof Box
                     </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       QR Code Stand
                     </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Acrylic Weighing Box
                     </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Electric Acrylic Box
                     </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Colored Acrylic Box
                     </a>
                   </div>
                 </div>
 
                 <div className="relative group/sub">
-                  <div className="px-4 py-2 text-gray-900 font-semibold cursor-pointer hover:bg-gray-100">
+                  <div className="px-4 py-2 text-gray-900 text-lg font-normal cursor-pointer hover:bg-gray-100">
                     <Link to="./Products/AcrylicMementos">
                       Acrylic Memento And Trophies
                     </Link>
                   </div>
                   <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Acrylic Trophy Memento
                     </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Acrylic Award Memento
                     </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Wooden Acrylic Trophy
                     </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Acrylic Award Trophies
                     </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Acrylic Award Trophy
                     </a>
                   </div>
                 </div>
 
                 <div className="relative group/sub">
-                  <div className="px-4 py-2 text-gray-900 font-semibold cursor-pointer hover:bg-gray-100">
+                  <div className="px-4 py-2 text-gray-900 text-lg font-normal cursor-pointer hover:bg-gray-100">
                     <Link to="./Products/AcrylicRod">Acrylic Rod</Link>
                   </div>
                   <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Acrylic Pipe And Rod
                     </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Acrylic Round Rod
                     </a>
                   </div>
                 </div>
 
                 <div className="relative group/sub">
-                  <div className="px-4 py-2 text-gray-900 font-semibold cursor-pointer hover:bg-gray-100">
+                  <div className="px-4 py-2 text-gray-900 text-lg font-normal cursor-pointer hover:bg-gray-100">
                     <Link to="./Products/MachineCover">Machine Cover</Link>
                   </div>
                   <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Machine Safety Guard
                     </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Acrylic Machine Guard
                     </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Gauge Meter Glass
                     </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-sm">
                       Meter Window Glass
                     </a>
                   </div>
@@ -284,7 +290,7 @@ const Header = () => {
                   >
                     <Link
                       to="./Products/Acrylicsheets"
-                      className="text-gray-800 font-semibold"
+                      className="text-gray-800 font-normal"
                     >
                       Acrylic Sheet
                     </Link>

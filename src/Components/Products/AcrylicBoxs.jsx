@@ -37,7 +37,7 @@ const AcrylicBoxs = () => {
               <img
                 src={product.images?.[0] || defaultImage}
                 alt={product.name}
-                className="w-full h-48 object-cover rounded-lg mb-4"
+                className="w-full h-64 object-cover rounded-lg mb-4"
               />
               <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
               <p className="text-blue-600 font-bold mb-2">{product.price}</p>
