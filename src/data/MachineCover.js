@@ -1,4 +1,8 @@
-import dataimg1 from "../assets/acrylicsheet.jpg";
+import machineimg1 from "../assets/item5/machine1.jpg";
+import machineimg2 from "../assets/item5/machine2.jpg";
+import machineimg3 from "../assets/item5/meter3.jpg";
+import machineimg4 from "../assets/item5/widow4.jpg";
+
 
 const MachineCover = [
     {
@@ -12,7 +16,7 @@ const MachineCover = [
                 color: "Yellow",
                 finish: "Polished",
                 description: "Price varies based on selected size.",
-                images: [dataimg1]
+                images: [machineimg1]
             },
             {
                 id: 2,
@@ -22,6 +26,8 @@ const MachineCover = [
                 color: "Silver",
                 finish: "Polished",
                 description: "Price varies based on selected size.",
+                images: [machineimg2]
+
             },
             {
                 id: 3,
@@ -31,6 +37,8 @@ const MachineCover = [
                 color: "Transparent",
                 thickness: "2mm",
                 description: "Price varies based on selected size.",
+                images: [machineimg3]
+
             },
             {
                 id: 4,
@@ -40,6 +48,8 @@ const MachineCover = [
                 thickness: "4mm",
                 shape: "Rectangle",
                 description: "Price varies based on selected size",
+                images: [machineimg4]
+
             },
 
         ],

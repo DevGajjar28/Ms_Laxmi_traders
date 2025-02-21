@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {
-  default as AcrylicRod,
-  default as MachineCover,
-} from "../../data/MachineCover";
+import MachineCover from "../../data/MachineCover";
 
 const MachineCovers = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -14,7 +11,9 @@ const MachineCovers = () => {
   useEffect(() => {
     if (productid) {
       // Find the product with the matching ID
-      const product = AcrylicRod[0].items.find((item) => item.id === productid);
+      const product = MachineCover[0].items.find(
+        (item) => item.id === productid
+      );
       if (product) {
         setSelectedProduct(product);
       }
@@ -69,8 +68,36 @@ const MachineCovers = () => {
         {/* Image Section */}
         <div className="md:w-1/2">
           <div className="relative">
+            <div className="w-full h-full overflow-hidden rounded-lg border border-gray-200">
+              <img
+                src={images[selectedImage] || defaultImage}
+                alt={`${product.name}images`}
+                className="w-full h-full object-cover"
+              />
+            </div>
             {/* Zoomable Image */}
             {/* Thumbnail Gallery */}
+            {images.length > 1 && (
+              <div className="flex gap-2 mt-4">
+                {images.map((image, idx) => (
+                  <button
+                    key={idx}
+                    className={`w-16 h-16 border rounded-md overflow-hidden ${
+                      selectedImage === idx
+                        ? "border-blue-500 border-2"
+                        : "border-gray-200"
+                    }`}
+                    onClick={() => setSelectedImage(idx)}
+                  >
+                    <img
+                      src={image}
+                      alt={`${product.name} thumbnail ${idx + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 

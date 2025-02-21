@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -32,19 +31,12 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-md">
-      <Helmet>
-        <title>Responsive Header Example</title>
-        <meta
-          name="description"
-          content="This is an example of a responsive, SEO-optimized header in React with Tailwind CSS."
-        />
-      </Helmet>
       <div className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
           <a href="/" className="text-2xl font-bold text-gray-800">
             Logo
           </a>
-          <nav className="hidden text-xl font-normal p-6 md:flex space-x-28">
+          <nav className="hidden text-xl mr-60 font-normal p-6 md:flex space-x-28">
             <a href="/" className="text-gray-800 hover:text-gray-600">
               Home
             </a>
@@ -59,73 +51,73 @@ const Header = () => {
                   <div className="px-4 py-2 text-gray-900 font-semibold cursor-pointer hover:bg-gray-100">
                     <Link to="./Products/Acrylicsheets">Acrylic Sheet</Link>
                   </div>
-                  <div className="absolute hidden group-hover/sub:flex flex-col left-full top-0 bg-white shadow-lg rounded-lg w-56 py-2 z-20">
-                    <Link className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Acrylic Transparent Sheet
-                    </Link>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Colored Acrylic Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Astari Acrylic Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Acrylic Transparent Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Transparent Display Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      2mm Black Acrylic Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Polystyrene Plastic Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Acrylic Cast Sheets
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Jewellery Display Box
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Acrylic Display Box
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Blue Acrylic Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Acrylic Plastic Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      8x4 Feet Acrylic Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Rectangular Acrylic Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Acrylic Mirror Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Cast Acrylic Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Window Acrylic Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Acrylic Cut Pieces And Sheets
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Acrylic Mirror Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Acrylic Plastic Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Polycarbonate Clear Sheet
-                    </a>
-                    <a className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                      Transparent Machine Guard
-                    </a>
+
+                  <div className="absolute hidden group-hover/sub:flex flex-wrap left-full top-0 bg-white shadow-lg rounded-lg w-[600px] p-4 z-20">
+                    <div className="grid grid-cols-2 gap-2 w-full">
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Acrylic Transparent Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Colored Acrylic Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Astari Acrylic Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Transparent Display Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        2mm Black Acrylic Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Polystyrene Plastic Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Acrylic Cast Sheets
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Jewellery Display Box
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Acrylic Display Box
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Blue Acrylic Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Acrylic Plastic Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        8x4 Feet Acrylic Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Rectangular Acrylic Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Acrylic Mirror Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Cast Acrylic Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Window Acrylic Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Acrylic Cut Pieces And Sheets
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Acrylic Mirror Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Acrylic Plastic Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Polycarbonate Clear Sheet
+                      </Link>
+                      <Link className="px-3 py-2 text-gray-800 hover:bg-gray-100 text-sm">
+                        Transparent Machine Guard
+                      </Link>
+                    </div>
                   </div>
                 </div>
 
@@ -222,7 +214,7 @@ const Header = () => {
           </nav>
           <button
             onClick={toggleMenu}
-            className="md:hidden text-gray-800 focus:outline-none"
+            className="md:hidden text-gray-800 focus:outline-none "
           >
             <svg
               className="w-6 h-6"

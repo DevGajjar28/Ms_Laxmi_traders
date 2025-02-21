@@ -66,6 +66,13 @@ const AcrylicRods = () => {
         {/* Image Section */}
         <div className="md:w-1/2">
           <div className="relative">
+            <div className="w-full h-full overflow-hidden rounded-lg border border-gray-200">
+              <img
+                src={images[selectedImage] || defaultImage}
+                alt={`${product.name} image`}
+                className="w-full h-full object-cover"
+              />
+            </div>
             {/* Zoomable Image */}
             {/* Thumbnail Gallery */}
           </div>

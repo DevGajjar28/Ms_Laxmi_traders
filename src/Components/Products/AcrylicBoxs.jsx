@@ -69,6 +69,13 @@ const AcrylicBoxs = () => {
         <div className="md:w-1/2">
           <div className="relative">
             {/* Zoomable Image */}
+            <div className="w-full h-full overflow-hidden rounded-lg border border-gray-200">
+              <img
+                src={images[selectedImage] || defaultImage}
+                alt={`${product.name} images`}
+                className="w-full h-full object-cover"
+              />
+            </div>
             {/* Thumbnail Gallery */}
             {images.length > 1 && (
               <div className="flex gap-2 mt-4">

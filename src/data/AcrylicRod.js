@@ -1,4 +1,8 @@
-import dataimg1 from "../assets/acrylicsheet.jpg";
+import rodimg1 from "../assets/item4/rod1.jpg";
+import rodimg2 from "../assets/item4/rod2.jpg";
+
+
+
 
 const AcrylicRod = [
     {
@@ -14,7 +18,7 @@ const AcrylicRod = [
                 application: "Chemical Industry",
                 polymertype: "Homopolymer",
                 description: "Price varies based on selected size.",
-                images: [dataimg1]
+                images: [rodimg1]
             },
             {
                 id: 2,
@@ -26,7 +30,7 @@ const AcrylicRod = [
                 application: "Construction Industry",
                 polymertype: "	Copolymer",
                 description: "Price varies based on selected size.",
-                images: [dataimg1]
+                images: [rodimg2]
             },
 
 

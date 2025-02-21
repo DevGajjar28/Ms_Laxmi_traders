@@ -1,4 +1,10 @@
-import dataimg1 from "../assets/acrylicsheet.jpg";
+import boximg1 from "../assets/item2/abox1.jpeg";
+import boximg3 from "../assets/item2/abox3.jpg";
+import boximg2 from "../assets/item2/aqr2.jpg";
+import boximg5 from "../assets/item2/colored.jpg";
+import boximg4 from "../assets/item2/elctric4.jpg";
+
+
 
 const AcrylicBox = [
     {
@@ -14,7 +20,7 @@ const AcrylicBox = [
                 thickness: "3 mm",
                 density: "-",
                 description: "Price varies based on selected size.",
-                images: [dataimg1]
+                images: [boximg1]
             },
             {
                 id: 2,
@@ -27,6 +33,8 @@ const AcrylicBox = [
                 shape: "Rectangle",
                 density: "-",
                 description: "Price varies based on selected size.",
+                images: [boximg2]
+
             },
             {
                 id: 3,
@@ -39,6 +47,8 @@ const AcrylicBox = [
                 shape: "Rectangle",
                 density: "-",
                 description: "Price varies based on selected size.",
+                images: [boximg3]
+
             },
             {
                 id: 4,
@@ -51,6 +61,8 @@ const AcrylicBox = [
                 shape: "-",
                 density: "-",
                 description: "Price varies based on selected size",
+                images: [boximg4]
+
             },
             {
                 id: 5,
@@ -63,6 +75,8 @@ const AcrylicBox = [
                 shape: "Rectangle",
                 density: "-",
                 description: "Price varies based on selected size",
+                images: [boximg5]
+
             },
 
 
