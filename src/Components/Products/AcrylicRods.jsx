@@ -73,8 +73,9 @@ const AcrylicRods = () => {
             <div className="w-full h-full overflow-hidden rounded-lg border border-gray-200">
               <img
                 src={images[selectedImage] || defaultImage}
-                alt={`${product.name} image`}
+                alt={`${product.name} images`}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             {/* Zoomable Image */}

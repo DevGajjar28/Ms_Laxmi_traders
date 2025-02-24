@@ -76,6 +76,7 @@ const AcrylicBoxs = () => {
                 src={images[selectedImage] || defaultImage}
                 alt={`${product.name} images`}
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
             {/* Thumbnail Gallery */}
@@ -95,6 +96,7 @@ const AcrylicBoxs = () => {
                       src={image}
                       alt={`${product.name} thumbnail ${idx + 1}`}
                       className="w-full h-full object-cover"
+                      loading="lazy"
                     />
                   </button>
                 ))}

@@ -2,7 +2,11 @@ import boximg1 from "../assets/item2/abox1.jpeg";
 import boximg3 from "../assets/item2/abox3.jpg";
 import boximg2 from "../assets/item2/aqr2.jpg";
 import boximg5 from "../assets/item2/colored.jpg";
+import boximg7 from "../assets/item2/displaybox.jpg";
 import boximg4 from "../assets/item2/elctric4.jpg";
+import boximg6 from "../assets/item2/jwbox.jpg";
+
+
 
 
 
@@ -76,6 +80,34 @@ const AcrylicBox = [
                 density: "-",
                 description: "Price varies based on selected size",
                 images: [boximg5]
+
+            },
+            {
+                id: 6,
+                name: "Jewellery Display Box",
+                price: "₹ 299/ Sq ft",
+                size: "-",
+                color: "-",
+                finish: "Polished",
+                thickness: "-",
+                shape: "-",
+                density: "-",
+                description: "Price varies based on selected size",
+                images: [boximg6]
+
+            },
+            {
+                id: 11,
+                name: "Acrylic Display Box",
+                price: "₹ 400/ piece",
+                size: "-",
+                color: "-",
+                finish: "-",
+                thickness: "-",
+                shape: "Cube",
+                density: "-",
+                description: "Price varies based on selected size",
+                images: [boximg7]
 
             },
 
