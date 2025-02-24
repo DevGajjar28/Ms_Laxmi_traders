@@ -10,9 +10,7 @@ const Whatsapp = ({ product }) => {
     );
     const imageUrl = images?.[0] ? encodeURIComponent(images[0]) : "";
 
-    const message = `Hello, I'm interested in buying this product:\n\n*Product:* ${name}\n*Price:* ₹${price}\n\n🔗 *View Product:* ${decodeURIComponent(
-      productURL
-    )}\n🖼️ *Product Image:* ${imageUrl}`;
+    const message = `Hello, I'm interested in buying this product:\n\n*Product:* ${name}\n*Price:* ₹${price}\n\n🔗 *View Product:* ${productURL}\n`;
 
     window.open(
       `https://wa.me/+919104014663?text=${encodeURIComponent(message)}`,
