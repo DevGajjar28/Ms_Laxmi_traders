@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"; // Import Framer Motion
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import dataimg5 from "../assets/acrylic-rod.jpg";
@@ -51,24 +52,45 @@ const ProductList = () => {
 
   return (
     <div className="container mx-auto px-6 py-12">
-      {/* Header Section */}
-      <div className="text-center mb-12">
-        <h1 className="text-5xl font-extrabold text-gray-900 leading-tight">
+      {/* Header Section with Animations */}
+      <div className="text-center mb-12 bg-black py-6 rounded-3xl">
+        {/* Heading Animation: Slide from Left */}
+        <motion.h1
+          initial={{ x: -800, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          className="text-5xl font-extrabold text-white leading-tight"
+        >
           Our Premium Products
-        </h1>
-        <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+        </motion.h1>
+
+        {/* Paragraph Animation: Slide from Right */}
+        <motion.p
+          initial={{ x: 800, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 2, ease: "easeOut", delay: 0.4 }}
+          className="text-lg bg-white text-black border-2 border-black mt-4 max-w-2xl mx-auto p-4 rounded-lg shadow-md"
+        >
           Explore our range of high-quality acrylic products, built for
           durability, style, and performance.
-        </p>
+        </motion.p>
       </div>
 
-      {/* Products Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-        {products.map((product) => (
-          <div
+      {/* Products Grid with Fade-in Animation */}
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
+      >
+        {products.map((product, index) => (
+          <motion.div
             key={product.id}
             className="group bg-white rounded-2xl border border-gray-300 shadow-lg transition-all duration-300 cursor-pointer hover:border-blue-500 hover:shadow-blue-400/50"
             onClick={() => navigate(product.path)}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
           >
             <img
               src={product.image}
@@ -85,9 +107,9 @@ const ProductList = () => {
                 View Details
               </button>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

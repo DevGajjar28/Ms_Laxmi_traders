@@ -1,3 +1,4 @@
+import { motion } from "framer-motion"; // Import Framer Motion
 import { ArrowRight } from "lucide-react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -67,7 +68,13 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="flex flex-col bg-white rounded-2xl overflow-hidden border-2 border-gray-300 h-full">
+    <motion.div
+      className="flex flex-col bg-white rounded-2xl overflow-hidden border-2 border-gray-300 h-full"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+    >
       <div className="relative h-48 overflow-hidden">
         <img
           src={product.image}
@@ -88,7 +95,7 @@ const ProductCard = ({ product }) => {
           <ArrowRight className="w-5 h-5 ml-2" />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -96,19 +103,33 @@ const OurProducts = () => {
   return (
     <section className="py-16 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+        {/* Heading Animation */}
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Products</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Discover our collection of premium acrylic products designed for
             your needs
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
+        {/* Product Grid with Animation */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          {products.map((product, index) => (
             <ProductCard key={product.id} product={product} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -4,14 +4,20 @@ const Whatsapp = ({ product }) => {
   const handleClick = () => {
     if (!product) return;
 
-    const { name, price, images } = product;
-    const productURL = window.location.href;
+    const { name, price, images, id } = product;
+    const productURL = encodeURIComponent(
+      `${window.location.origin}/products/${id}`
+    );
+    const imageUrl = images?.[0] ? encodeURIComponent(images[0]) : "";
 
-    const message = `Hello, I'm interested in buying this product:\n\n*Product:* ${name}\n*Price:* ₹${price}\n*Link:* ${productURL}\n*Product Image:* ${
-      images?.[0] || "No image available"
-    }\nPlease provide more details.`;
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/+918320201473?text=${encodedMessage}`, "_blank");
+    const message = `Hello, I'm interested in buying this product:\n\n*Product:* ${name}\n*Price:* ₹${price}\n\n🔗 *View Product:* ${decodeURIComponent(
+      productURL
+    )}\n🖼️ *Product Image:* ${imageUrl}`;
+
+    window.open(
+      `https://wa.me/+919104014663?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
   };
 
   return (
