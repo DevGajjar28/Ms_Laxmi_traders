@@ -6,8 +6,44 @@ const Whatsapp = ({ product }) => {
 
     const { name, price, images, id, category } = product;
 
-    // Construct the absolute product URL with the correct path structure
-    const productURL = `${window.location.origin}/Products/${category}/${id}`;
+    // Get the current path to determine the category if not explicitly provided
+    const currentPath = window.location.pathname;
+
+    // Extract category from current path as fallback if category isn't in product object
+    let productCategory = category;
+    if (!productCategory) {
+      // Parse the URL to extract category
+      const pathParts = currentPath.toLowerCase().split("/");
+      const categoryIndex = pathParts.indexOf("products") + 1;
+      if (categoryIndex > 0 && categoryIndex < pathParts.length) {
+        productCategory = pathParts[categoryIndex];
+      }
+    }
+
+    // Ensure category is valid, or use a default
+    const validCategories = [
+      "acrylicboxs",
+      "acrylicsheets",
+      "acrylicmementos",
+      "acrylicrod",
+      "machinecover",
+    ];
+    if (!productCategory || !validCategories.includes(productCategory)) {
+      // Use the current page category or fallback to a default
+      if (currentPath.includes("acrylicboxs")) productCategory = "acrylicboxs";
+      else if (currentPath.includes("acrylicsheets"))
+        productCategory = "acrylicsheets";
+      else if (currentPath.includes("acrylicmementos"))
+        productCategory = "acrylicmementos";
+      else if (currentPath.includes("acrylicrod"))
+        productCategory = "acrylicrod";
+      else if (currentPath.includes("machinecover"))
+        productCategory = "machinecover";
+      else productCategory = "product"; // Fallback
+    }
+
+    // Construct the absolute product URL with the correct path and case
+    const productURL = `${window.location.origin}/products/${productCategory}/${id}`;
 
     // Create the message with proper encoding
     const message = `Hello, I'm interested in buying this product:

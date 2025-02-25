@@ -68,7 +68,7 @@ const ProductList = () => {
         <motion.p
           initial={{ x: 800, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 2, ease: "easeOut", delay: 0.4 }}
+          transition={{ duration: 2, ease: "easeOut", delay: 0.3 }}
           className="text-lg bg-white text-black border-2 border-black mt-4 max-w-2xl mx-auto p-4 rounded-lg shadow-md"
         >
           Explore our range of high-quality acrylic products, built for
@@ -81,7 +81,7 @@ const ProductList = () => {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
+        transition={{ duration: 2, ease: "easeOut", delay: 0.4 }}
       >
         {products.map((product, index) => (
           <motion.div
