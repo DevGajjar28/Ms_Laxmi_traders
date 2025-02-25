@@ -7,7 +7,7 @@ const Whatsapp = ({ product }) => {
     const { name, price, images, id, category } = product;
 
     // Construct the absolute product URL with the correct path structure
-    const productURL = `${window.location.origin}/products/${category}/${id}`;
+    const productURL = `${window.location.origin}/Products/${category}/${id}`;
 
     // Create the message with proper encoding
     const message = `Hello, I'm interested in buying this product:
