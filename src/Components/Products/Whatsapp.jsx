@@ -5,17 +5,23 @@ const Whatsapp = ({ product }) => {
     if (!product) return;
 
     const { name, price, images, id } = product;
-    const productURL = encodeURIComponent(
-      `${window.location.origin}/products/${id}`
-    );
-    const imageUrl = images?.[0] ? encodeURIComponent(images[0]) : "";
 
-    const message = `Hello, I'm interested in buying this product:\n\n*Product:* ${name}\n*Price:* ₹${price}\n\n🔗 *View Product:* ${productURL}\n`;
+    // Construct the absolute product URL properly
+    const productURL = `${window.location.origin}/products/${id}`;
 
-    window.open(
-      `https://wa.me/+919104014663?text=${encodeURIComponent(message)}`,
-      "_blank"
-    );
+    // Create the message with proper encoding
+    const message = `Hello, I'm interested in buying this product:
+
+*Product:* ${name}
+*Price:* ₹${price}
+
+🔗 *View Product:* ${productURL}`;
+
+    // Encode the entire message once at the end
+    const encodedMessage = encodeURIComponent(message);
+
+    // Open WhatsApp with the properly encoded message
+    window.open(`https://wa.me/+919104014663?text=${encodedMessage}`, "_blank");
   };
 
   return (
