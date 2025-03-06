@@ -108,3 +108,51 @@ plt.show()
 <br/>
 <hr/>
 
+##pie chart import
+import matplotlib.pyplot as plt
+import pandas as pd
+
+
+df = pd.read_csv('student_enrollment.csv')
+print(df)
+
+df.columns = df.columns.str.strip()
+
+Course = df["Course"]
+Enrollment = df["Enrollment"]
+
+plt.figure(figsize=(8,8))
+plt.pie(Enrollment, labels=Course, autopct="%1.1f%%")
+plt.title("student enrollment")
+plt.legend(title="course", loc = "upper right")
+plt.show()
+
+<br/>
+<hr/>
+
+
+##GOLDBAR
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('olympics_medals.csv')
+print(df)
+
+plt.figure(figsize=(10,10))
+
+plt.bar(df["country"], df["Gold"], label="Gold", color='red')
+plt.bar(df["country"], df["Silver"],bottom=df["Gold"], label="Silver", color='blue')
+plt.bar(df["country"], df["Bronze"], bottom=df["Gold"]+df["Silver"], label="bronze", color='pink')
+
+plt.xticks()
+
+
+plt.title("here we go")
+plt.xlabel("dev")
+plt.ylabel("gajjar")
+plt.legend()
+plt.show()
+
+<br/>
+<hr/>
